@@ -8,6 +8,14 @@
   Install Node.Js: https://nodejs.org/en/ <br>
   Install Postman: https://www.getpostman.com/apps
   <h3>Step 2: Git Set-Up/Tutorial</h3>
+  
+  Using Git: <br>
   Video: https://www.youtube.com/watch?v=HVsySz-h9r4 <br>
-  1) 
+  
+  Obtaining SSH key:
+  1) https://www.laptopmag.com/articles/use-bash-shell-windows-10
+  2) https://docs.microsoft.com/en-us/windows/wsl/install-win10
+  3) 
+  
+  
 </p>
