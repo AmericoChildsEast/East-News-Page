@@ -15,7 +15,8 @@
   Obtaining SSH key:
   1) https://www.laptopmag.com/articles/use-bash-shell-windows-10
   2) https://docs.microsoft.com/en-us/windows/wsl/install-win10
-  3) 
+  3) Paste: ssh-keygen -t ed25519 -C "email@example.com" [into Ubuntu]
+  4) Paste
   
   
 </p>
