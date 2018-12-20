@@ -11,12 +11,19 @@
   
   Using Git: <br>
   Video: https://www.youtube.com/watch?v=HVsySz-h9r4 <br>
+
+  Basic Commands:
+     git remote add origin git@gitlab.com:madison-east-programming/east-news-page.git
+     git add -A
+     git commit -m "description"
+     git push o
   
   Obtaining SSH key:
   1) https://www.laptopmag.com/articles/use-bash-shell-windows-10
   2) https://docs.microsoft.com/en-us/windows/wsl/install-win10
-  3) Paste: ssh-keygen -t ed25519 -C "email@example.com" [into Ubuntu]
-  4) Paste
+  3) Paste: ssh-keygen -t ed25519 -C "email@example.com" [into Git Bash]
+  4) Paste: cat ~/.ssh/id_ed25519.pub
+  5) Copy the SSH key then paste it into "SSH Keys" into settings on GitLab
   
   
 </p>
