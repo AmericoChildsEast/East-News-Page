@@ -13,7 +13,11 @@
   Video: https://www.youtube.com/watch?v=HVsySz-h9r4 <br>
 
   Basic Commands:<br>
-   
+
+     git init
+
+     git pull origin [branch]
+
      git remote add origin git@gitlab.com:madison-east-programming/east-news-page.git
      git branch 
      git branch [name]
@@ -23,6 +27,8 @@
      git commit -m "description"
      git push origin [branch]
   
+  NEVER PUSH TO THE 'MASTER' BRANCH!!!
+
   Obtaining SSH key:
   1) https://www.laptopmag.com/articles/use-bash-shell-windows-10
   2) https://docs.microsoft.com/en-us/windows/wsl/install-win10
