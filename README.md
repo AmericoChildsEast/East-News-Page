@@ -15,10 +15,9 @@
   Basic Commands:<br>
 
      git init
-
+     git remote add origin git@gitlab.com:madison-east-programming/east-news-page.git
      git pull origin [branch]
 
-     git remote add origin git@gitlab.com:madison-east-programming/east-news-page.git
      git branch 
      git branch [name]
      git checkout [branch]
