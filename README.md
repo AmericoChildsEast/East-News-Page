@@ -12,11 +12,16 @@
   Using Git: <br>
   Video: https://www.youtube.com/watch?v=HVsySz-h9r4 <br>
 
-  Basic Commands:
-     git remote add origin git@gitlab.com:madison-east-programming/east-news-page.git
-     git add -A
-     git commit -m "description"
-     git push o
+  Basic Commands:<br>
+     git remote add origin git@gitlab.com:madison-east-programming/east-news-page.git (connect to repo) <br>
+
+     git branch (lists branches) <br>
+     git branch name <br>
+     git checkout name <br>
+
+     git add -A (add files to staging area) <br>
+     git commit -m "description" (commit files) <br>
+     git push origin (branch)
   
   Obtaining SSH key:
   1) https://www.laptopmag.com/articles/use-bash-shell-windows-10
