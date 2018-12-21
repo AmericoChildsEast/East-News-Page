@@ -34,6 +34,6 @@
   3) Paste: ssh-keygen -t ed25519 -C "email@example.com" [into Git Bash]
   4) Paste: cat ~/.ssh/id_ed25519.pub
   5) Copy the SSH key then paste it into "SSH Keys" into settings on GitLab
-  
-  
+  <h3>Step 3: Development </h3>
+  1) Type "npm run server" to run backend & frontend
 </p>
