@@ -8,13 +8,20 @@ const UserSchema = new Schema( {
     email: {
         type:       String,
         required:   true,
+        unique:     true,
+        lowercase:  true,
     },
-    name: {
+    firstname: {
         type:       String,
+        default:    '',
     },
-    admin: {
-        type: Boolean,
-        default: false,
+    lastname: {
+        type:       String,
+        default:    '',
+    },
+    group: {
+        type:       Number,
+        default:    0,
     }
 
 })
