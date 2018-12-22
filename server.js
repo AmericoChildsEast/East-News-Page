@@ -1,5 +1,6 @@
 const express = require('express'); // Requiring/Importing modules
 const mongoose = require('mongoose');
+const morgan = require('morgan');
 const bodyParser = require('body-parser');
 
 const users = require('./routes/api/users');
@@ -7,6 +8,7 @@ const users = require('./routes/api/users');
 const app = express();
 
 // Bodyparser Middleware
+app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 // DB Config
@@ -20,6 +22,8 @@ mongoose
 
 // Use Routes
 app.use('/api/users', users)
+app.use('/util', require('./routes/api/userutil'));
+
 
 const port = process.env.PORT || 5000;
 
