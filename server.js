@@ -2,6 +2,7 @@ const express = require('express'); // Requiring/Importing modules
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const users = require('./routes/api/users');
 
@@ -10,6 +11,8 @@ const app = express();
 // Bodyparser Middleware
 app.use(morgan('dev'));
 app.use(bodyParser.json());
+
+app.use(cors());
 
 // DB Config
 const db = require('./config/keys').mongoURI;

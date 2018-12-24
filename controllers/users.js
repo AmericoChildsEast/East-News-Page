@@ -5,7 +5,7 @@ const { JWT_SECRET } = require('../config/keys')
 signToken = (user) => {
     return JWT.sign({
         iss: 'MadisonEast',
-        sub: user.id,
+        sub: user,
     }, JWT_SECRET);
 }
 
@@ -34,8 +34,9 @@ module.exports = {
 
         res.json({ token: token} );
     },
-    signIn: async (req, res, next) => {
-        console.log('UsersController.signin() called');
+    signIn: (id) => {
+        const token = signToken(id);
+        return token;
     },
     apanel: async (req, res, next) => {
         console.log('UsersController.apanel() called');
