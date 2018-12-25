@@ -5,17 +5,12 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema( {
 
     // Save Email
-    email: {
+    googleid: {
         type:       String,
         required:   true,
         unique:     true,
-        lowercase:  true,
     },
-    firstname: {
-        type:       String,
-        default:    '',
-    },
-    lastname: {
+    name: {
         type:       String,
         default:    '',
     },
