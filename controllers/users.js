@@ -10,11 +10,36 @@ signToken = (user) => {
 }
 
 module.exports = {
-    signUp: async (req, res, next) => {
+    signUp: async (id, res, next) => {
         console.log('UsersController.signup() called');
 
-        const { email, fn, ln, g } = req.value.body;
+        const data = id;
+        const domain = require('../config/keys').EMAILDOMAIN;
+        
+        const googleId = data.body.googleId
 
+        console.log(data.body.email.search("madison.k12.wi.us"));
+
+        if( !(data.body.email.search("madison.k12.wi.us") == -1) ) {
+            const foundUser = await User.findOne({ googleid: googleId });
+            if ( foundUser ) {
+                const token = signToken(id.body.accessToken);
+                res.json({ token: token } );
+            } else {
+                const newUser = new User({
+                    googleid: googleId,
+                    name: data.body.name,
+                })
+                await newUser.save();
+
+                const token = signToken(id.body.accessToken);
+                res.json({ token: token } );
+            }
+        } else {
+            res.status(403).send({ error: 'You must be within the MMSD school district!'});
+        }
+            
+        /*
         const foundUser = await User.findOne({ email });
 
         if( foundUser ) { 
@@ -31,8 +56,9 @@ module.exports = {
         await newUser.save();
 
         const token = signToken(newUser);
-
+        
         res.json({ token: token} );
+        */
     },
     signIn: (id) => {
         const token = signToken(id);

@@ -7,7 +7,9 @@ export default (props) => {
   return (
     <div className="App">
       <Navbar />
-      { props.children }
+      <div className="container">
+        { props.children }
+      </div>
     </div>
   );
 }

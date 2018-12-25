@@ -18,6 +18,7 @@ router.route('/signin')
 ////     Google Auth     ////
 /////////////////////////////
 
+/*
 router.get('/login', passport.authenticate('googleToken', {
     scope: ['profile'] 
 }));
@@ -26,6 +27,10 @@ router.get('/redirect', passport.authenticate('googleToken'), (req, res) => {
     res.send('you have reached the callback URI');
     console.log('hey');
 });
+*/
+
+router.route('/login')
+    .post(UsersController.signUp);
 
 /////////////////////////////
 

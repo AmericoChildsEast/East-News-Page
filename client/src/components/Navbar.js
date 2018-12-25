@@ -1,15 +1,28 @@
 
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-export default class NavBar extends Component {
+import * as actions from '../actions';
+
+class NavBar extends Component {
+  constructor(props) {
+    super(props);
+    this.signOut = this.signOut.bind(this);
+  }
+  
+  signOut() {
+    console.log("hey");
+    this.props.signOut();
+    this.props.push('/');
+  }
+  
   render() {
     return (
       <div>
 
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{ marginBottom: '30px'}}>
           <Link className="navbar-brand" to="/">Madison East News</Link>
-
 
           <div className="collapse navbar-collapse">
             <ul className="navbar-nav mr-auto">
@@ -17,10 +30,18 @@ export default class NavBar extends Component {
                 <Link className="nav-link" to="/dashboard">Dashboard</Link>
               </li>
             </ul>
+
             <ul className="nav navbar-nav ml-auto">
-              <li className="nav-item">
+              { !this.props.isAuth ?
+                [<li className="nav-item">
                 <Link className="nav-link" to="/signin">Sign In</Link>
+              </li>] : null }
+              
+              { this.props.isAuth ? 
+              <li className="nav-item">
+                <Link className="nav-link" to="/signout" onClick={this.signOut}>Sign Out</Link>
               </li>
+              : null}
             </ul>
           </div>
 
@@ -30,3 +51,11 @@ export default class NavBar extends Component {
     );
   }
 };
+
+function mapStateToProps(state) {
+    return {
+      isAuth: state.auth.isAuthenticated
+    };
+}
+
+export default connect(mapStateToProps, actions)(NavBar);

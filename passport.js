@@ -33,7 +33,7 @@ passport.use( 'googleToken', new GoogleStrategy({
     clientSecret: 'e1haB9ArsXKzcBEMuVbOJiK8',
     callbackURL: "http://tolocalhost.com/util/redirect", //
 }, async (request, accessToken, refreshToken, profile, done) => {
-    //console.log(profile);
+    console.log("yeaaa " + accessToken);
     User.findOne({ googleid: profile.id })
         .then((current) => {
             if( current ){
