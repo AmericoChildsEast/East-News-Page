@@ -3,7 +3,11 @@ import React from 'react';
 export default () => {
     return (
         <div>
-            Welcome to Madison East's News Page!
+            <div className="text-center">
+                <div className="container" style={{marginLeft: '40px', marginRight: '40px'}}>
+                    
+                </div>
+            </div>
         </div>
     );
 }

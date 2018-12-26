@@ -21,7 +21,7 @@ class SignOut extends Component {
             <div>
                 Signout component
 
-                {this.redirect}
+                
             </div>
         );
     }

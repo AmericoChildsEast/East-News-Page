@@ -35,7 +35,7 @@ class SignIn extends Component {
                         {this.props.errorMessage}
                     </div>
                     : null }
-                    <div class="alert alert-success">
+                    <div class="alert alert-primary">
                         Utilize your MMSD email
                     </div>
                     <GoogleLogin 
