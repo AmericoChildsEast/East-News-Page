@@ -56,7 +56,7 @@ class NavBar extends Component {
 
 <Navbar color="primary" dark expand="md">
           <NavbarBrand href="/">
-          <img src={require('../content/towernews.png')} width="249" height="100" alt=""/>
+            <img src={require('../content/eastlogo_a2.png')} width="249" height="100" style={{marginTop: '-18px', marginBottom: '-18px'}}/>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -64,7 +64,7 @@ class NavBar extends Component {
             { !this.props.isAuth ?
               [
                 <NavItem>
-                  <NavLink href="/signin">Sign-In</NavLink>
+                  <NavLink href="/signin" >Sign-In</NavLink>
                 </NavItem>
               ] : null 
             }
@@ -82,7 +82,7 @@ class NavBar extends Component {
             { this.props.isAuth ? [
               <UncontrolledDropdown nav inNavbar>
               
-                <DropdownToggle nav caret dark>
+                <DropdownToggle nav caret active dark>
                   Options
                 </DropdownToggle>
                 <DropdownMenu right>
