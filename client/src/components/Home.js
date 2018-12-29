@@ -1,7 +1,11 @@
 
 import React, { Component } from 'react';
 
+import { Container } from 'reactstrap';
+
+
 import Showcase from './Showcase';
+import HeaderImage from './HeaderImage';
 
 class Home extends Component {
 
@@ -9,10 +13,13 @@ class Home extends Component {
         return (
             <div>
                 <div className="text-center">
-                    <div className="container" style={{marginLeft: '40px', marginRight: '40px'}}>
-                    <Showcase />
-                    </div>
+                    <HeaderImage/>
+                    
+                    
                 </div>
+
+                
+
             </div>
         );
     }

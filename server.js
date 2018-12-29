@@ -4,8 +4,6 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const users = require('./routes/api/users');
-
 const app = express();
 
 // Bodyparser Middleware
@@ -24,7 +22,6 @@ mongoose
     .catch(err => console.log( err ) )
 
 // Use Routes
-app.use('/api/users', users)
 app.use('/util', require('./routes/api/userutil'));
 
 

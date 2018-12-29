@@ -5,6 +5,8 @@ import { compose } from 'redux';
 
 import GoogleLogin from 'react-google-login';
 
+import HeaderImage from './HeaderImage';
+
 import * as actions from '../actions';
 
 class SignIn extends Component {
@@ -23,6 +25,7 @@ class SignIn extends Component {
     render() {
         return (
             <div>
+                <HeaderImage/>
                 { this.props.errorMessage ? 
                 <div className="alert alert-danger">
                     {this.props.errorMessage}

@@ -1,4 +1,4 @@
-import { AUTH_SIGN_UP, AUTH_ERROR, AUTH_SIGN_OUT } from '../actions/types';
+import { AUTH_SIGN_UP, AUTH_ERROR, AUTH_SIGN_OUT, GET_USERS } from '../actions/types';
 
 const DEFAULT_STATE = {
     isAuthenticated: false,
@@ -14,6 +14,8 @@ export default ( state = DEFAULT_STATE, action ) => {
             return { ...state, token: action.payload, isAuthenticated: false, errorMessage: ''}
         case AUTH_ERROR:
             return { ...state, errorMessage: action.payload }
+        case GET_USERS:
+            return { ...state, users: action.payload }
         default:
             return state;
     }

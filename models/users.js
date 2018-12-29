@@ -4,16 +4,18 @@ const Schema = mongoose.Schema;
 //Create Schema
 const UserSchema = new Schema( {
 
-    // Save Email
+   // Save GoogleID
     googleid: {
         type:       String,
         required:   true,
         unique:     true,
     },
+    // Saving the name
     name: {
         type:       String,
         default:    '',
     },
+    // Saving the group
     group: {
         type:       Number,
         default:    0,

@@ -80,12 +80,13 @@ class Showcase extends Component {
     return (
         <div>
             <div className="text-center">
-                <div className="container" style={{marginLeft: '40px', marginRight: '40px' }}>
+                <div className="container" style={{marginLeft: '40px', marginRight: '40px' }} >
                     <Carousel
                         activeIndex={activeIndex}
                         next={this.next}
                         previous={this.previous}
                         interval={5000}
+                        width={10}
                     >
                     <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={this.goToIndex} />
                     {slides}
