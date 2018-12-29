@@ -30,8 +30,9 @@ class NavBar extends Component {
     };
   }
 
-  toDashboard() {
-    //this.props.push('/dashboard');
+  async toDashboard() {
+    const users = await this.props.getUsers();
+      console.log("hey");
   }
 
   toggle() {
@@ -56,7 +57,7 @@ class NavBar extends Component {
 
 <Navbar color="primary" dark expand="md">
           <NavbarBrand href="/">
-            <img src={require('../content/eastlogo_a2.png')} width="249" height="100" style={{marginTop: '-18px', marginBottom: '-18px'}}/>
+            <img src={require('../content/eastlogo_a1.png')} width="249" height="100" style={{marginTop: '-18px', marginBottom: '-18px'}}/>
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
@@ -86,7 +87,7 @@ class NavBar extends Component {
                   Options
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem onClick={this.props.toDashboard}>
+                  <DropdownItem >
                   <a href="/dashboard">Dashboard</a>
                   </DropdownItem>
                   <DropdownItem>
