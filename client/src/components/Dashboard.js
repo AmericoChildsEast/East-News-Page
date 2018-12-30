@@ -53,6 +53,12 @@ class Dashboard extends Component {
                 <button id="btn">Button 2</button>
                 <button id="btn">Button 3</button>
                 <button id="btn">Button 4</button>
+                <button id="btn">Button 5</button>
+                <button id="btn">Button 6</button>
+                <button id="btn">Button 7</button>
+                <button id="btn">Button 8</button>
+                <button id="btn">Button 9</button>
+                <button id="btn">Button 10</button>
                 
                 </div>
                 <div class="contentBox">
@@ -60,20 +66,49 @@ class Dashboard extends Component {
                 {
                   
                     users.map(function(users, index){
-                        return <p key={ index } style={{color: "black"}} >users.name}</p>;
+                        return <p id="p" key={ index } style={{color: "black"}} >users.name}
+                                  <p id="pchild">date here / email</p>
+                                  <p id="pchild">time here / password</p>
+                                </p>;
                     })
                   
+                
                 }
-                <p> Fake name </p>
-                <p> Fake name </p>
-                <p> Fake name </p>
-                <p> Fake name </p>
-                <p> Fake name </p>
-                <p> Fake name </p>
-                <p> Fake name </p>
+                
+                    
+                <p>Name goes here 
+                    <p id="pchild">date here / email</p>
+                    <p id="pchild">time here / password</p>
+                </p>
+                <p>Name goes here 
+                    <p id="pchild">date here / email</p>
+                    <p id="pchild">time here / password</p>
+                </p>
+                <p>Name goes here 
+                    <p id="pchild">date here / email</p>
+                    <p id="pchild">time here / password</p>
+                </p>
+                <p>Name goes here 
+                <p id="pchild">date here / email</p>
+                    <p id="pchild">time here / password</p>
+                </p>
+                <p>Name goes here 
+                <p id="pchild">date here / email</p>
+                    <p id="pchild">time here / password</p>
+                </p>
+                <p>Name goes here 
+                <p id="pchild">date here / email</p>
+                    <p id="pchild">time here / password</p>
+                </p>
+                <p>Name goes here 
+                <p id="pchild">date here / email</p>
+                    <p id="pchild">time here / password</p>
+                </p>
+                
                 </div>
+                <h3> this content should appear after the dashbord component boutton is clicked </h3>
                 </div>
-
+                
             </div>
            
         );
