@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar'; // Importing Navbar
 import Footer from './Footer';
-import ShowCase from './Showcase';
+//import ShowCase from './Showcase';
 
 //import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
 //
