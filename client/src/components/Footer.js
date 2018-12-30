@@ -9,9 +9,9 @@ class Footer extends Component {
         return (
             <div></div>
             // <div>
-           //     <div className="container" width="100%" height="auto" >        
-             //           <img src={require('../content/eastlogo.png')} width="75" style={{marginTop: "20px"}} />
-               //  </div>
+            //     <div className="container" width="100%" height="auto" >        
+            //           <img src={require('../content/eastlogo.png')} width="75" style={{marginTop: "20px"}} />
+            //      </div>
             //</div>
         );
     }
