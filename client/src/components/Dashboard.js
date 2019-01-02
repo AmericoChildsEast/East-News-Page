@@ -6,6 +6,7 @@ import { Container, Row, Col } from 'reactstrap';
 
 import SideMenu from './SideMenu';
 import * as actions from '../actions';
+import './dashboardCSS.css';
 
 class Dashboard extends Component {
     
@@ -61,30 +62,23 @@ class Dashboard extends Component {
                     <p id="pchild">date here/email</p>
                     <p id="pchild">time here/password</p>
                 </p>
+
                 <p>Name goes here 
                     <p id="pchild">date here/email</p>
                     <p id="pchild">time here/password</p>
                 </p>
+
                 <p>Name goes here 
                     <p id="pchild">date here/email</p>
                     <p id="pchild">time here/password</p>
                 </p>
+
                 <p>Name goes here 
                 <p id="pchild">date here/email</p>
                     <p id="pchild">time here/password</p>
                 </p>
-                <p>Name goes here 
-                <p id="pchild">date here/email</p>
-                    <p id="pchild">time here/password</p>
-                </p>
-                <p>Name goes here 
-                <p id="pchild">date here/email</p>
-                    <p id="pchild">time here/password</p>
-                </p>
-                <p>Name goes here 
-                <p id="pchild">date here/email</p>
-                    <p id="pchild">time here/password</p>
-                </p>
+
+    
                 
                 </div>
                 <h3> This content should appear after the dashbord component button is clicked </h3>

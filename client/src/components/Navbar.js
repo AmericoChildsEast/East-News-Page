@@ -53,12 +53,16 @@ class NavBar extends Component {
   render() {
     return (
 
-      <div>
+      <div id="navbox">
 
-<Navbar color="primary" dark expand="md">
+<Navbar  expand="md">
+
           <NavbarBrand href="/">
-            <img src={require('../content/eastlogo_a1.png')} width="249" height="100" style={{marginTop: '-18px', marginBottom: '-18px'}}/>
+            <img src={require('../content/eastlogo_a1.png')} 
+                   width="249" height="100" style={{marginTop: '-18px',
+                       marginBottom: '-18px'}}/>
           </NavbarBrand>
+
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
