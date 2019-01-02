@@ -41,8 +41,9 @@ class Dashboard extends Component {
         return (
                 
             <div>
+    
+                <div className="container" style={{marginBottom: '0px'}}>
                 <SideMenu />
-                <div className="container" style={{marginBottom: '100px'}}>
                 <div class="contentBox">
                
                 {
@@ -51,33 +52,10 @@ class Dashboard extends Component {
                         return <p id="p" key={ index } style={{color: "black"}} >users.name}
                                   <p id="pchild">date here/email</p>
                                   <p id="pchild">time here/password</p>
-                                </p>;
+                                </p>
                     })
                   
-                
-                }
-                
-                    
-                <p>Name goes here 
-                    <p id="pchild">date here/email</p>
-                    <p id="pchild">time here/password</p>
-                </p>
-
-                <p>Name goes here 
-                    <p id="pchild">date here/email</p>
-                    <p id="pchild">time here/password</p>
-                </p>
-
-                <p>Name goes here 
-                    <p id="pchild">date here/email</p>
-                    <p id="pchild">time here/password</p>
-                </p>
-
-                <p>Name goes here 
-                <p id="pchild">date here/email</p>
-                    <p id="pchild">time here/password</p>
-                </p>
-
+                }   
     
     <h3> This content should appear after the dashbord component button is clicked </h3>
                 </div>

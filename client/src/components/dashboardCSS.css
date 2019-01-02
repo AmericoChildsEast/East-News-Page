@@ -4,10 +4,10 @@
 #sideMenu{
     border:none;
     width:200px;
-    height:565px;
+    height:567px;
     color:black;
     float: left;
-    background: #212F3D  ;
+    background-color:#880E4F ;
 
 }
 #btn{
@@ -17,10 +17,10 @@
     text-align: left;
     font-family: Helvetica, sans-serif;
     color:white;
-    background-color:#212F3D  ;
+    background-color: #880E4F;
 }
 #btn:hover{
-    background-color:#3498DB;
+    background-color:#330066 ;
     border-left: 7px solid black;
 }
 
@@ -31,12 +31,15 @@
 ****************************/
 
 .container{
-   
+  
 
 }
 .contentBox{
     border:none;
     color: black;
+    height:567px;
+    background-color: aqua;
+    overflow: auto;
 }
 p{
     border:none;
