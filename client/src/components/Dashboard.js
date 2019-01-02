@@ -79,9 +79,8 @@ class Dashboard extends Component {
                 </p>
 
     
-                
+    <h3> This content should appear after the dashbord component button is clicked </h3>
                 </div>
-                <h3> This content should appear after the dashbord component button is clicked </h3>
                 </div>
                 
             </div>
