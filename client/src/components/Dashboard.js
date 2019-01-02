@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+
+import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
-import dashboardCSS from './dashboardCSS.css';
+
+import SideMenu from './SideMenu';
 import * as actions from '../actions';
 
 class Dashboard extends Component {
@@ -23,8 +25,6 @@ class Dashboard extends Component {
         });
 
         console.log( "Testing", this.state.users );
-
-        
       }
 
     render() {
@@ -40,26 +40,8 @@ class Dashboard extends Component {
         return (
                 
             <div>
-
+                <SideMenu />
                 <div className="container" style={{marginBottom: '100px'}}>
-                <div id="sideMenu">
-
-        <button id="btn">
-              <a onClick={this.toDashboard} style={{color: "black"}}>
-                Dashboard component
-              </a>
-        </button>
-        <button id="btn">Edit Article</button>
-        <button id="btn">Button 2</button>
-        <button id="btn">Button 3</button>
-        <button id="btn">Button 4</button>
-        <button id="btn">Button 5</button>
-        <button id="btn">Button 6</button>
-        <button id="btn">Button 7</button>
-        <button id="btn">Button 8</button>
-        <button id="btn">Button 9</button>
-        <button id="btn">Button 10</button>
-        </div>
                 <div class="contentBox">
                
                 {
