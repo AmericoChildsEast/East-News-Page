@@ -7,7 +7,7 @@
     height:567px;
     color:black;
     float: left;
-    background-color:#880E4F ;
+    background-color:#1B2631;
 
 }
 #btn{
@@ -17,7 +17,7 @@
     text-align: left;
     font-family: Helvetica, sans-serif;
     color:white;
-    background-color: #880E4F;
+    background-color:#1B2631;
 }
 #btn:hover{
     background-color:#330066 ;
@@ -38,7 +38,7 @@
     border:none;
     color: black;
     height:567px;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
     overflow: auto;
 }
 p{

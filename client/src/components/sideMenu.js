@@ -11,13 +11,6 @@ class SideMenu extends Component {
             
               <div>
                  <div id="sideMenu">
-
-                        <button id="btn">
-                          <a onClick={this.toDashboard} style={{color: "black"}}>
-                          Dashboard component
-                            </a>
-                        </button>
-
                       <NavLink to="/EditingPage">
                             <button id="btn">Edit New Article</button>
                        </NavLink>

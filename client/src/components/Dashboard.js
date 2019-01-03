@@ -49,10 +49,12 @@ class Dashboard extends Component {
                 {
                   
                     users.map(function(users, index){
-                        return <p id="p" key={ index } style={{color: "black"}} >users.name}
-                                  <p id="pchild">date here/email</p>
-                                  <p id="pchild">time here/password</p>
-                                </p>
+                        return  <div>
+                                  <p id="p" key={ index } style={{color: "black"}} >{users.name}
+                                    <p id="pchild">date here/email</p>
+                                    <p id="pchild">time here/password</p>
+                                  </p>
+                                </div>
                     })
                   
                 }   

@@ -20,9 +20,9 @@ export default (props) => {
     <div className="App">
       <Navbar />
         <div className="container">
-        <Route path="/EditingPage" component={EditingPage} />
-        <Route path="/Articles" component={Articles} />
-        <Route path="/Members" component={Members} />
+          <Route path="/EditingPage" component={EditingPage} />
+          <Route path="/Articles" component={Articles} />
+          <Route path="/Members" component={Members} />
           { props.children }
         </div>
       <Footer />
