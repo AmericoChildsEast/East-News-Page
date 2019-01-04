@@ -55,7 +55,7 @@ class Articles extends Component {
     render(){
       
         return(
-            <div>
+        <div>
            <SideMenu />
            <div className="contentBox">
 
@@ -65,8 +65,10 @@ class Articles extends Component {
                </h1>
 
                {this.printMoreBox()}
-
-         </div>
+<br/>
+<br/>
+<br/>
+        </div>
         </div>
         );
         
