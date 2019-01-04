@@ -45,21 +45,21 @@ class Dashboard extends Component {
                 <div className="container" style={{marginBottom: '0px'}}>
                 <SideMenu />
                 <div class="contentBox">
-               
+
                 {
                   
                     users.map(function(users, index){
                         return  <div>
-                                  <p id="p" key={ index } style={{color: "black"}} >{users.name}
-                                    <p id="pchild">date here/email</p>
-                                    <p id="pchild">time here/password</p>
+                                  <p id="pName"> 
+                                     <span key={ index } style={{color: "black"}} >{users.name}</span>
+                                     <span id="pchild">date here/email</span>
+                                     <span id="pchild">time here/password</span>
                                   </p>
                                 </div>
                     })
                   
                 }   
-    
-    <h3> This content should appear after the dashbord component button is clicked </h3>
+
                 </div>
                 </div>
                 
