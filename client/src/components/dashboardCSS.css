@@ -47,7 +47,7 @@
 }
 /*-----------------------------*/
 /***Articles page elements***/
-#textBox{
+#articleBox{
     border:none;
     border-radius: 30px;
     width: 80%;
@@ -56,7 +56,7 @@
     background-color:#FFFFFF ;
 
 }
-#innerBox{
+#visualBox{
     border:none;
     border-radius: 15% 0% 0% 16%;
     width: 20%;
@@ -65,20 +65,22 @@
     background-color:#1ABC9C;
 
 }
-#a-Txt{
+#sample_txt_Box{
     border:none;
-    height: 160px;
-    width: 60%;
+/* border-bottom:1px solid #D5D8DC; */
+    height: 120px;
+    width: 100%;
     padding: 10px;
     float: left;
+    
 }
-#innerBox2{
+#manage_btn_Box{
     border:none;
     border-left:2px solid #D5D8DC;
     border-radius: 0% 17% 17% 0%;
     width: 20%;
     height: 160px;
-    float: right;
+    float:right;
     background-color:#FFFFFF;
 
 }
@@ -105,7 +107,8 @@
 
 }
 #editBtn:hover,#delBtn:hover{
-    background-color:#f8f8f8 ;
+    background-color:#D4E6F1;
+    color:#4A235A;
 }
 
 /*----------------------------*/
