@@ -52,8 +52,11 @@
     border-radius: 30px;
     width: 80%;
     height: 160px;
-    margin: 0 0 0 10%;
+    margin: 10px 0 0 10%;
     background-color:#FFFFFF ;
+    -webkit-box-shadow: 9px 21px 100px -31px rgba(88,128,245,1);
+-moz-box-shadow: 9px 21px 100px -31px rgba(88,128,245,1);
+box-shadow: 9px 21px 100px -31px rgba(88,128,245,1);
 
 }
 #visualBox{
