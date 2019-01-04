@@ -37,12 +37,17 @@ class Members extends Component {
                  <div>
                        <SideMenu />
                        <div className="contentBox">
-                         <h1>List of all members go here</h1>
+                         <h1 style={{color: "black",textAlign:"center"}}>Members</h1>
 
                         {
                          users.map(function(users, index){
                            return   <div>
-                                      <p id="p" style={{color: "black"}} >{users.name}</p>
+                                     <p id="pName"> 
+                                     <span id="pchild"  key={ index } style={{color: "black"}} >{users.name}</span>
+                                     <span id="pchild" style={{float:"right",borderLeft:" 1px solid #808B96"}}>date here/email</span>
+                                     <span id="pchild" style={{float:"right",borderLeft:" 1px solid  #808B96"}}>time here/password</span>
+                                    <hr style={{border:"0.4 solid  #566573"}}/>
+                                  </p>
                                    </div>
                             })
                         }

@@ -51,9 +51,10 @@ class Dashboard extends Component {
                     users.map(function(users, index){
                         return  <div>
                                   <p id="pName"> 
-                                     <span key={ index } style={{color: "black"}} >{users.name}</span>
-                                     <span id="pchild">date here/email</span>
-                                     <span id="pchild">time here/password</span>
+                                     <span id="pchild"  key={ index } style={{color: "black"}} >{users.name}</span>
+                                     <span id="pchild" style={{float:"right",borderLeft:" 1px solid #808B96"}}>date here/email</span>
+                                     <span id="pchild" style={{float:"right",borderLeft:" 1px solid  #808B96"}}>time here/password</span>
+                                    <hr style={{border:"0.4 solid  #566573"}}/>
                                   </p>
                                 </div>
                     })
