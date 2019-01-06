@@ -9,7 +9,7 @@ function ArticleBoxToken() {
         <div id="articleBox">
 
         <div id="visualBox"  style={{textAlign:"", color:"", padding:"5px 0 0 60px", fontSize:90}}>
-              <p style={{textAlign:"",color:"white"}}> H </p> 
+              <p style={{textAlign:"",color:"white"}}> A </p> 
          </div>
 
          <div id="article_container" style={{border:"none", 
