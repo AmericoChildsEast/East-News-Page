@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SideMenu from './SideMenu';
+import Editor from './Editor';
 
 import  './dashboardCSS.css';
 
@@ -10,7 +11,8 @@ class EditingPage extends Component {
                  <div>
                     <SideMenu />
                     <div className="contentBox">
-                    <h1>Editng tools go here</h1>
+                    <h1>Editor</h1>
+                    <Editor placeholder={'Write something...'}/>, 
                     </div>
                  </div>
            );
