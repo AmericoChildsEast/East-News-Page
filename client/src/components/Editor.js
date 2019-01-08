@@ -33,9 +33,9 @@ class Editor extends React.Component {
           formats={Editor.formats}
           bounds={'.app'}
           placeholder={this.props.placeholder}
-          style={{width:"50%",
+          style={{width:"70%",
                   height:"400px",
-                  margin:"0 0 0 20% ",
+                  margin:"0 0 0 15% ",
                   }}
         />
      
