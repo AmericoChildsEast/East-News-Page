@@ -12,7 +12,10 @@ class EditingPage extends Component {
                     <SideMenu />
                     <div className="contentBox">
                     <h1>Editor</h1>
-                    <Editor placeholder={'Write something...'}/>, 
+                    <Editor placeholder={'Write something...'}/>
+                    <br/>
+                    <br/>
+                    <br/>
                     </div>
                  </div>
            );
