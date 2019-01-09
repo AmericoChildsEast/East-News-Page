@@ -76,7 +76,7 @@ class Editor extends Component {
                  height:"600px",
                  margin:"20px 0 0 15% ",
                  backgroundColor:"#FFFFFF",
-                 border:"#FFFFFF",
+                 ///border:"px solid #FFFFFF",
                            }}
         />
       </div>
