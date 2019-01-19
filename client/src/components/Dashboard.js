@@ -17,7 +17,7 @@ class Dashboard extends Component {
             users: null
         }
     }
-
+//
     async toDashboard() {
         await this.props.getUsers();
 
