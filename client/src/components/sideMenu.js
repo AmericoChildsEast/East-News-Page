@@ -1,11 +1,30 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
 
+import * as actions from '../actions';
 import  './dashboardCSS.css';
 
 class SideMenu extends Component {
 
+     constructor(props) {
+          super(props);
+          this.toDashboard = this.toDashboard.bind(this);
+          this.state = {
+              users: null
+          }
+      }
   
+      async toDashboard() {
+          await this.props.getUsers();
+  
+          this.setState({
+              users: JSON.parse(localStorage.getItem("Users"))
+          });
+  
+          console.log("Testing", this.state.users);
+      }
+
     render(){
            return (
             
@@ -20,7 +39,7 @@ class SideMenu extends Component {
                         </NavLink>
 
                         <NavLink to="/Members">
-                        <button id="btn">Members</button>
+                        <button id="btn" onClick={this.toDashboard}>Members</button>
                         </NavLink>
 
                         <NavLink to="">
@@ -36,4 +55,4 @@ class SideMenu extends Component {
     }
       
 }
-export default SideMenu;
+export default connect(null, actions)(SideMenu);

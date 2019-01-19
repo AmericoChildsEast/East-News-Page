@@ -22,6 +22,15 @@ router.route('/promote')
 router.route('/demote')
     .post(UsersController.demoteGroup);
 
+router.route('/newarticle')
+    .post(UsersController.addArticle);
+
+router.route('/delarticle')
+    .post(UsersController.removeArticle);
+
+router.route('/editarticle')
+    .post(UsersController.editArticle);
+
 ///////////////////
 ///   Returns   ///
 ///////////////////
