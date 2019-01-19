@@ -25,6 +25,7 @@ class NavBar extends Component {
     this.signOut = this.signOut.bind(this);
     this.toggle = this.toggle.bind(this);
     this.toDashboard = this.toggle.bind(this);
+    this.demoteUser = this.demoteUser.bind(this);
     this.state = {
       isOpen: false
     };
@@ -46,10 +47,12 @@ class NavBar extends Component {
     this.props.signOut();
     //this.props.push('/');
   }
-  ///
-  //
-  //
-  //
+
+  async demoteUser(res) {
+    console.log("Yes");
+    await this.props.demoteUser({ target: "112451752252608257848", user: "114536355977246817245" });
+  }
+
   render() {
     return (
 
@@ -95,7 +98,7 @@ class NavBar extends Component {
                   <a href="/dashboard">Dashboard</a>
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                    <button onClick={this.demoteUser}>Option 2</button>
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>

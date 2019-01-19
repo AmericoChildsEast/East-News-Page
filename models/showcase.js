@@ -20,4 +20,4 @@ const ShowcaseSchema = new Schema( {
 
 })
 
-module.exports = ShowcaseSchema = mongoose.model('user', ShowcaseSchema);
+module.exports = ShowcaseSchema = mongoose.model('showcase', ShowcaseSchema);

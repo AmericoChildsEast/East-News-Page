@@ -1,5 +1,9 @@
 import axios from 'axios';
-import { AUTH_SIGN_UP, AUTH_ERROR, AUTH_SIGN_OUT, GET_USERS } from './types';
+import { MESSAGE, AUTH_SIGN_UP, AUTH_ERROR, AUTH_SIGN_OUT, GET_USERS } from './types';
+
+/////////////////
+///   Login   ///
+/////////////////
 
 export const oauthGoogle = data => {
     return async dispatch => {
@@ -22,6 +26,10 @@ export const oauthGoogle = data => {
     }
 }
 
+////////////////////
+///   Sign-Out   ///
+////////////////////
+
 export const signOut = () => {
     return dispatch => {
         localStorage.removeItem('JWT_TOKEN');
@@ -33,12 +41,14 @@ export const signOut = () => {
     }
 }
 
+/////////////////
+///   Users   ///
+/////////////////
+
 export const getUsers = () => {
     return async dispatch => {
 
-        const res = await axios.post('http://localhost:5000/util/getusers', {
-            
-        });
+        const res = await axios.post('http://localhost:5000/util/getusers', {});
 
         console.log(res.data.users);
 
@@ -52,19 +62,47 @@ export const getUsers = () => {
     }
 }
 
-export const promoteUser = () => {
+export const promoteUser = data => {
     return async dispatch => {
         
+        console.log(data);
+        
         const res = await axios.post('http://localhost:5000/util/promote', {
+            tid: data.target,
+            uid: data.user
+        });
+
+        console.log( res.data );
+
+        dispatch({
+            type: MESSAGE,
+            payload: res.data.message
         });
 
         
+    }
+}
+
+export const demoteUser = data => {
+    return async dispatch => {
+
+        console.log(data);
+        
+        const res = await axios.post('http://localhost:5000/util/demote', {
+            tid: data.target,
+            uid: data.user
+        });
+
+        console.log( res.data );
+
+        dispatch({
+            type: MESSAGE,
+            payload: res.data.message
+        });
 
     }
 }
 
-export const demoteUser = () => {
-    return dispatch => {
-
-    }
-}
+////////////////////
+///   Articles   ///
+////////////////////

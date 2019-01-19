@@ -3,21 +3,33 @@ const Schema = mongoose.Schema;
 
 const PostSchema = new Schema( {
 
-    // Save Email
-    googleid: {
+    // Save Date
+    date: {
         type:       String,
         required:   true,
-        unique:     true,
     },
-    name: {
+    // Save googleID of user
+    author: {
+        type:       String,
+        required:   true,
+    },
+    title: {
+        type:       String,
+        required:   true,
+    },
+    header: {
         type:       String,
         default:    '',
     },
-    group: {
-        type:       Number,
-        default:    0,
+    body: {
+        type:       String,
+        default:    '',
+    },
+    edit: {
+        type:       String,
     }
+
 
 })
 
-module.exports = Post = mongoose.model('user', PostSchema);
+module.exports = Post = mongoose.model('posts', PostSchema);

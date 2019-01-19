@@ -1,5 +1,6 @@
 const JWT = require('jsonwebtoken');
 const User = require('../models/users');
+const Post = require('../models/posts');
 const { JWT_SECRET } = require('../config/keys')
 
 signToken = (user) => {
@@ -10,6 +11,19 @@ signToken = (user) => {
 }
 
 module.exports = {
+
+    /////////////////
+    ///   Users   ///
+    /////////////////
+
+    getUsers: async (req, res, next) => {
+
+        const users = await User.find();
+        
+        res.json({ users });
+
+    },
+
     signUp: async (req, res, next) => {
 
         // import config for "madison.k12.wi.us domain"
@@ -40,10 +54,14 @@ module.exports = {
             }
         } else {
             // If the user isn't using a MMSD email respond with an error
-            res.status(403).send({ error: 'You must be within the MMSD school district!'});
+            res.json({ error: 'You must be within the MMSD school district!'});
         }
 
     },
+
+    //////////////////////
+    ///   Group Util   ///
+    //////////////////////
 
     promoteGroup: async (req, res, next) => {
         
@@ -53,7 +71,7 @@ module.exports = {
         const fuser = await User.findOne({ googleid: uid }); // Find user
         const ftarget = await User.findOne({ googleid: tid }); // Find target
 
-        if ( uid == tid ) { res.status(403).send({ error: 'You cannot target yourself' }); }
+        if ( uid == tid ) { res.json({ message: 'You cannot target yourself' }); return; }
         // If user exists
         if( fuser ) {
             // If target exists
@@ -62,7 +80,7 @@ module.exports = {
                 if ( fuser.group > 1 ) {
                     // Ensure target isn't max rank
                     if ( ftarget.group >= 2 ) {
-                        res.status(403).send({ error: 'Target already has max rank' });
+                        res.json({ message: 'Target already has max rank' });
                     } else {
                         // New rank number
                         const newgroup = ftarget.group + 1;
@@ -80,15 +98,15 @@ module.exports = {
                     }
 
                 } else {
-                    res.status(403).send({ error: 'You do not have perms to promote' });
+                    res.json({ message: 'You do not have perms to promote' });
                 }
 
             } else {
-                res.status(404).send({ error: 'User that you are targeting does not exist' });
+                res.json({ message: 'User that you are targeting does not exist' });
             }
 
         } else {
-            res.status(404).send({ error: 'Apparently you do not exist...' });
+            res.json({ message: 'Apparently you do not exist...' });
         }
 
 
@@ -102,7 +120,8 @@ module.exports = {
         const fuser = await User.findOne({ googleid: uid }); // Find user
         const ftarget = await User.findOne({ googleid: tid }); // Find target
 
-        //if ( uid == tid ) { res.status(403).send({ error: 'You cannot target yourself' }); }
+        if ( uid == tid ) { res.json({ message: 'You cannot target yourself' }); return; }
+
         // If user exists
         if( fuser ) {
             // If target exists
@@ -111,7 +130,7 @@ module.exports = {
                 if ( fuser.group > 1 ) {
                     // Ensure target isn't min rank
                     if ( ftarget.group < 1 ) {
-                        res.status(403).send({ error: 'Target already has min rank' });
+                        res.json({ message: 'Target already has min rank' });
                     } else {
                         // New rank number
                         const newgroup = ftarget.group - 1;
@@ -129,25 +148,105 @@ module.exports = {
                     }
 
                 } else {
-                    res.status(403).send({ error: 'You do not have perms to demote' });
+                    res.json({ message: 'You do not have perms to demote' });
                 }
 
             } else {
-                res.status(404).send({ error: 'User that you are targeting does not exist' });
+                res.json({ message: 'User that you are targeting does not exist' });
             }
 
         } else {
-            res.status(404).send({ error: 'Apparently you do not exist...' });
+            res.json({ message: 'Apparently you do not exist...' });
         }
         
     },
 
-    getUsers: async (req, res, next) => {
+    /////////////////
+    ///   Posts   ///
+    /////////////////
 
-        const users = await User.find();
-        
-        res.json({ users });
+    addArticle: async ( req, res, next ) => {
+
+        const user = req.body.uid;
+        const titl = req.body.titl;
+        const head = req.body.head;
+        const text = req.body.txt;
+
+        var d = new Date();
+
+        const fuser = await User.findOne({ googleid: user }); // Find user
+
+        if( fuser.group < 1 ) {
+            res.status(403).send({ error: 'You do not have perms to post' });
+        } else {
+            const newArticle = new Post({
+                date: d,
+                author: fuser.googleid,
+                title: titl,
+                header: head,
+                body: text
+            })
+
+            await newArticle.save();
+            res.json({ message: newArticle });
+        }
 
     },
+
+    removeArticle: async ( req, res, next ) => {
+        
+        const post = req.body.pid;
+        const user = req.body.uid;
+
+        const fuser = await User.findOne({ googleid: user }); // Find user
+        const fpost = await Post.findOne({ _id: post });
+
+        if( !( fuser.group < 2 ) || fpost.author == uid ) {
+            await Post.findByIdAndDelete( fpost.id );
+            res.json({ message: "Successful" });
+        } else {
+           
+            res.status(403).send({ message: 'You do not have perms to delete' });
+        }
+
+    },
+
+    editArticle: async ( req, res, next ) => {
+        
+        const titl = req.body.titl;
+        const head = req.body.head;
+        const text = req.body.txt;
+        const user = req.body.uid;
+        const post = req.body.pid;
+
+        const fuser = await User.findOne({ googleid: user }); // Find user
+        const fpost = await Post.findOne({ _id: post });
+
+        console.log( fpost); 
+
+        if( !( fuser.group < 2 ) || fpost.author == uid ) {
+            
+            if( titl != null ) {
+                fpost.title = titl;
+            }
+
+            if( head != null ) {
+                fpost.header = head;
+            }
+
+            if( text != null ) {
+                fpost.body = text;
+            }
+
+            fpost.edit = new Date();
+
+            await fpost.save()
+            res.json({ message: "Successful" });
+
+        } else {
+            res.status(403).send({ message: 'You do not have perms to delete' });
+        }
+
+    }
     
 }
