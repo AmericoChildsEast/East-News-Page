@@ -6,6 +6,7 @@ const passportconf = require('../../passport');
 const { validateBody, schemas } = require('../../helpers/routeHelpers');
 const UsersController = require('../../controllers/users');
 
+
 ///////////////////
 ///   Utility   ///
 ///////////////////
@@ -21,15 +22,6 @@ router.route('/promote')
 // Demote User
 router.route('/demote')
     .post(UsersController.demoteGroup);
-
-router.route('/newarticle')
-    .post(UsersController.addArticle);
-
-router.route('/delarticle')
-    .post(UsersController.removeArticle);
-
-router.route('/editarticle')
-    .post(UsersController.editArticle);
 
 ///////////////////
 ///   Returns   ///

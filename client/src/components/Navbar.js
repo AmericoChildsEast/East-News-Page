@@ -57,7 +57,7 @@ class NavBar extends Component {
           <NavbarBrand href="/">
             <img src={require('../content/eastlogo_a1.png')} 
                    width="249" height="100" style={{marginTop: '-18px',
-                       marginBottom: '-18px'}}/>
+                       marginBottom: '-18px', font: '#ffff'}}/>
           </NavbarBrand>
 
           <NavbarToggler onClick={this.toggle} />

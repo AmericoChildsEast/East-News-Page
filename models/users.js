@@ -19,6 +19,10 @@ const UserSchema = new Schema( {
     group: {
         type:       Number,
         default:    0,
+    },
+    email: {
+        type:       String,
+        default:    '',
     }
 
 })
