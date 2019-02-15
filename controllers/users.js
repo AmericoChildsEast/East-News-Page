@@ -160,37 +160,5 @@ module.exports = {
         }
         
     },
-
-    /////////////////
-    ///   Posts   ///
-    /////////////////
-
-    addArticle: async ( req, res, next ) => {
-
-        const user = req.body.uid;
-        const titl = req.body.titl;
-        const head = req.body.head;
-        const text = req.body.txt;
-
-        var d = new Date();
-
-        const fuser = await User.findOne({ googleid: user }); // Find user
-
-        if( fuser.group < 1 ) {
-            res.status(403).send({ error: 'You do not have perms to post' });
-        } else {
-            const newArticle = new Post({
-                date: d,
-                author: fuser.googleid,
-                title: titl,
-                header: head,
-                body: text
-            })
-
-            await newArticle.save();
-            res.json({ message: newArticle });
-        }
-
-    },
     
 }

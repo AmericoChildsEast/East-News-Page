@@ -25,10 +25,13 @@ const PostSchema = new Schema( {
         type:       String,
         default:    '',
     },
+    approval: {
+        type:       Boolean,
+        default:    false,
+    },
     edit: {
         type:       String,
     }
-
 
 })
 

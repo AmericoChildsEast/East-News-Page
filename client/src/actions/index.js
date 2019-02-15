@@ -104,6 +104,34 @@ export const demoteUser = data => {
 
 export const addArticle = data => {
     return async dispatch => {
+        const res = await axios.post('http://localhost:5000/article/newarticle');
+
+
+
+    }
+}
+
+export const delArticle = data => {
+    return async dispatch => {
+        const res = await axios.post('http://localhost:5000/article/delarticle');
+
+
+
+    }
+}
+
+export const editArticle = data => {
+    return async dispatch => {
+        const res = await axios.post('http://localhost:5000/article/editarticle');
+
+
+
+    }
+}
+
+export const approveArticle = data => {
+    return async dispatch => {
+        const res = await axios.post('http://localhost:5000/article/approvearticle');
 
 
 
