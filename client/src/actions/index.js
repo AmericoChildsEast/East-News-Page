@@ -104,9 +104,20 @@ export const demoteUser = data => {
 
 export const addArticle = data => {
     return async dispatch => {
-        const res = await axios.post('http://localhost:5000/article/newarticle');
 
+        const res = await axios.post('http://localhost:5000/article/newarticle', {
+            uid: data.user,
+            titl: data.title,
+            head: data.head,
+            txt: data.txt
+        });
 
+        console.log( "whattt" );
+
+        dispatch({
+            type: AUTH_SIGN_UP,
+            payload: res.data.titl
+        });
 
     }
 }

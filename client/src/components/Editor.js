@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import ReactQuill from 'react-quill';
 
+import { connect } from 'react-redux';
+
+import * as actions from '../actions';
+
 import 'react-quill/dist/quill.snow.css';
 
 
@@ -56,6 +60,12 @@ class Editor extends Component {
     super(props);
     this.state = { editorHtml: "" };
     this.handleChange = this.handleChange.bind(this);
+    this.newArticle = this.newArticle.bind(this);
+  }
+
+  async newArticle( t, h, b ) {
+    console.log(b);
+    await this.props.addArticle( { user: localStorage.getItem('GoogleID'), title: t, head: h, txt: b } );
   }
 
   handleChange(html) {
@@ -64,7 +74,9 @@ class Editor extends Component {
 
   render() {
     return (
+      
       <div className="text-editor">
+        
         <CustomToolbar />
         <ReactQuill
           onChange={this.handleChange}
@@ -79,6 +91,7 @@ class Editor extends Component {
                  ///border:"px solid #FFFFFF",
                            }}
         />
+        <button onClick={() => this.newArticle( "yessir", "Bobby", this.state.editorHtml )}>Add New</button>
       </div>
     );
   }
@@ -129,4 +142,4 @@ Editor.formats = [
 // };
 
 
-export default Editor;
+export default connect(null, actions)(Editor);
