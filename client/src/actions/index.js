@@ -14,6 +14,7 @@ export const oauthGoogle = data => {
             name: data.name,
             email: data.email
         });
+        console.log(res.data);
         // If the token returns null (not using a MMSD email) exit function
         if ( res.data.token == null ) {
             console.log("Please utilize a MMSD email");

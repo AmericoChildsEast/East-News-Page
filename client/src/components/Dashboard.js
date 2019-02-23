@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'reactstrap';
 
-import SideMenu from './SideMenu';
+import SideMenu from './sideMenu';
 import * as actions from '../actions';
 import './dashboardCSS.css';
 
@@ -17,7 +17,7 @@ class Dashboard extends Component {
             users: null
         }
     }
-//
+    //
     async toDashboard() {
         await this.props.getUsers();
 
@@ -47,14 +47,14 @@ class Dashboard extends Component {
                     <div class="contentBox">
 
                         {
-
+                            //display members #format
                             users.map(function (users, index) {
                                 return <div>
                                     <p id="pName">
                                         <span id="pchild" key={index} style={{ color: "black" }} >{users.name}</span>
                                         <span id="pchild" style={{ float: "right", borderLeft: " 1px solid #808B96" }}>date here/email</span>
                                         <span id="pchild" style={{ float: "right", borderLeft: " 1px solid  #808B96" }}>time here/password</span>
-                                        <hr style={{ border: "0.4 solid  #566573" }} />
+                                        <hr style={{ border: "0.4px solid  #566573" }} />
                                     </p>
                                 </div>
                             })

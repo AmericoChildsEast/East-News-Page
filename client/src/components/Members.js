@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import * as actions from '../actions';
+import { DH_CHECK_P_NOT_SAFE_PRIME } from 'constants';
 
-import SideMenu from './SideMenu';
+import SideMenu from './sideMenu';
 
 import './dashboardCSS.css';
-import { DH_CHECK_P_NOT_SAFE_PRIME } from 'constants';
+
 class Members extends Component {
 
       constructor(props) {

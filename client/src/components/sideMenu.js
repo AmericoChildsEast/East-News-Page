@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 import  './dashboardCSS.css';
+import './sideMenu.css';
 
 class SideMenu extends Component {
 
@@ -15,7 +16,7 @@ class SideMenu extends Component {
           }
       }
   
-      async toDashboard() {
+      async toDashboard() {  
           await this.props.getUsers();
   
           this.setState({

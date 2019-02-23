@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
-import 'react-quill/dist/quill.snow.css';
 
+import 'react-quill/dist/quill.snow.css';
+import './editingPage.css';
 
 
 /*
@@ -28,6 +29,7 @@ function insertStar() {
 /*
  * Custom toolbar component including insertStar button and dropdowns
  */
+
 const CustomToolbar = () => (
   <div id="toolbar">
     <select className="ql-header" defaultValue={""} onChange={e => e.persist()}>
@@ -63,9 +65,9 @@ class Editor extends Component {
     this.newArticle = this.newArticle.bind(this);
   }
 
-  async newArticle( t, h, b ) {
+  async newArticle(t, h, b) {
     console.log(b);
-    await this.props.addArticle( { user: localStorage.getItem('GoogleID'), title: t, head: h, txt: b } );
+    await this.props.addArticle({ user: localStorage.getItem('GoogleID'), title: t, head: h, txt: b });
   }
 
   handleChange(html) {
@@ -74,24 +76,27 @@ class Editor extends Component {
 
   render() {
     return (
-      
-      <div className="text-editor">
-        
-        <CustomToolbar />
-        <ReactQuill
-          onChange={this.handleChange}
-          placeholder={this.props.placeholder}
-          modules={Editor.modules}
-          formats={Editor.formats}
-          theme={"snow"} // pass false to use minimal theme
-          style={{width:"70%",
-                 height:"600px",
-                 margin:"20px 0 0 15% ",
-                 backgroundColor:"#FFFFFF",
-                 ///border:"px solid #FFFFFF",
-                           }}
-        />
-        <button onClick={() => this.newArticle( "yessir", "Bobby", this.state.editorHtml )}>Add New</button>
+      <div>
+
+        {/* <div className="text-editor"> */}
+
+          <CustomToolbar />
+          <ReactQuill
+            onChange={this.handleChange}
+            placeholder={this.props.placeholder}
+            modules={Editor.modules}
+            formats={Editor.formats}
+            theme={"snow"} // pass false to use minimal theme
+            style={{
+              width: "70%",
+              height: "600px",
+              margin: "20px 0 0 15% ",
+              backgroundColor: "#FFFFFF",
+              ///border:"px solid #FFFFFF",
+            }}
+          />
+          <button onClick={() => this.newArticle("yessir", "Bobby", this.state.editorHtml)}>Add New</button>
+        {/* </div> */}
       </div>
     );
   }
@@ -119,7 +124,7 @@ Editor.modules = {
  */
 Editor.formats = [
   "header",
- "font",
+  "font",
   "size",
   "bold",
   "italic",

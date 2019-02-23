@@ -14,7 +14,7 @@ module.exports = {
         var d = new Date();
 
         const fuser = await User.findOne({ googleid: user }); // Find user
-
+        
         if( fuser.group < 1 ) {
             res.status(403).send({ error: 'You do not have perms to post' });
         } else {

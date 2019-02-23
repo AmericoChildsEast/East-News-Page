@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import './navBar.css';
 
 import {
   Collapse,
@@ -14,7 +15,8 @@ import {
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem
+} from 'reactstrap';
 
 
 import * as actions from '../actions';
@@ -32,7 +34,7 @@ class NavBar extends Component {
 
   async toDashboard() {
     const users = await this.props.getUsers();
-      console.log("hey");
+    console.log("hey");
   }
 
   toggle() {
@@ -52,70 +54,72 @@ class NavBar extends Component {
 
       <div id="navbox">
 
-<Navbar  expand="md">
+        <Navbar expand="md">
 
           <NavbarBrand href="/">
-            <img src={require('../content/eastlogo_a1.png')} 
-                   width="249" height="100" style={{marginTop: '-18px',
-                       marginBottom: '-18px', font: '#ffff'}}/>
+            <img src={require('../content/eastlogo_a1.png')}
+              width="249" height="100" style={{
+                marginTop: '-18px',
+                marginBottom: '-18px', font: '#ffff'
+              }} />
           </NavbarBrand>
 
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-            { !this.props.isAuth ?
-              [
-                <NavItem>
-                  <NavLink href="/signin" >Sign-In</NavLink>
-                </NavItem>
-              ] : null 
-            }
+              {!this.props.isAuth ?
+                [
+                  <NavItem>
+                    <NavLink href="/signin" >Sign-In</NavLink>
+                  </NavItem>
+                ] : null
+              }
 
-            { this.props.isAuth ?
-              [
-                <li className="nav-item">
-                  <NavLink href="/signout" onClick={this.signOut}>
-                  Sign-Out
+              {this.props.isAuth ?
+                [
+                  <li className="nav-item">
+                    <NavLink href="/signout" onClick={this.signOut}>
+                      Sign-Out
                   </NavLink>
-                </li>
-              ] : null 
-            }
+                  </li>
+                ] : null
+              }
 
-            { this.props.isAuth ? [
-              <UncontrolledDropdown nav inNavbar>
-              
-                <DropdownToggle nav caret active dark>
-                  Options
+              {this.props.isAuth ? [
+                <UncontrolledDropdown nav inNavbar>
+
+                  <DropdownToggle nav caret active dark>
+                    Options
                 </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem >
-                  <a href="/dashboard">Dashboard</a>
+                  <DropdownMenu right>
+                    <DropdownItem >
+                      <a href="/dashboard">Dashboard</a>
+                    </DropdownItem>
+                    <DropdownItem>
+                      <button>Option 2</button>
+                    </DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem>
+                      Reset
                   </DropdownItem>
-                  <DropdownItem>
-                    <button>Option 2</button>
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-            ] : null }
+                  </DropdownMenu>
+                </UncontrolledDropdown>
+              ] : null}
             </Nav>
           </Collapse>
         </Navbar>
 
-        
+
       </div>
-      
+
     );
   }
 };
 
 function mapStateToProps(state) {
-    return {
-      isAuth: state.auth.isAuthenticated
-    };
+  return {
+    isAuth: state.auth.isAuthenticated
+  };
 }
 
 export default connect(mapStateToProps, actions)(NavBar);
