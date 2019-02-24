@@ -1,32 +1,49 @@
 /*home page styles..*/
-.content{
- border: 1px solid black;
- width:100%;
- margin: 0 0 0 0;
- padding: 6px;
-}
 
+.content {
+    border: none;
+    width: 100%;
+    margin: 0 0 0 0;
+    padding: 0px;
+}
 
 /*----------------------*/
 
 /*home article styles...*/
-#article-card{
+
+#article-card {
+    display: inline-block;
     position: relative;
-    border: 1px solid black;
+    border: none;
+    text-align: justify;
     width: 300px;
     height: 350px;
-    /* float: left; */
-    margin: 10px 0 0 10%;
+    margin: 0px 0 10px 2%;
     border-radius: 8px 8px 8px 8px;
+    -webkit-box-shadow: 0px 6px 19px -1px rgba(184, 153, 184, 0.56);
+    -moz-box-shadow: 0px 6px 19px -1px rgba(184, 153, 184, 0.56);
+    box-shadow: 0px 6px 19px -1px rgba(184, 153, 184, 0.56);
 }
-#card-img{
+
+#article-card:hover {
+    -webkit-box-shadow: 0px 0px 20px 6px rgba(201,148,87,1);
+-moz-box-shadow: 0px 0px 20px 6px rgba(201,148,87,1);
+box-shadow: 0px 0px 20px 6px rgba(201,148,87,1);
+
+}
+
+#card-img {
     height: 250px;
+    padding: 10px;
     border-radius: 8px 8px 0px 0px;
-    background-color: #5ED5C5;
+    background-color: #9C38EB;
 }
-#card-footer{
-    border: 1px solid black;
+
+#card-footer {
+    border: none;
+    padding: 10px;
     height: 100px;
     border-radius: 0 0 8px 8px;
 }
+
 /*-----------------------*/
