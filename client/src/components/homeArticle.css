@@ -1,0 +1,32 @@
+/*home page styles..*/
+.content{
+ border: 1px solid black;
+ width:100%;
+ margin: 0 0 0 0;
+ padding: 6px;
+}
+
+
+/*----------------------*/
+
+/*home article styles...*/
+#article-card{
+    position: relative;
+    border: 1px solid black;
+    width: 300px;
+    height: 350px;
+    /* float: left; */
+    margin: 10px 0 0 10%;
+    border-radius: 8px 8px 8px 8px;
+}
+#card-img{
+    height: 250px;
+    border-radius: 8px 8px 0px 0px;
+    background-color: #5ED5C5;
+}
+#card-footer{
+    border: 1px solid black;
+    height: 100px;
+    border-radius: 0 0 8px 8px;
+}
+/*-----------------------*/

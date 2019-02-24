@@ -31,6 +31,10 @@ class SideMenu extends Component {
 
             <div>
                 <div id="sideMenu">
+
+                    <NavLink to="">
+                        <button id="btn">Home</button>
+                    </NavLink>
                     <NavLink to="/EditingPage">
                         <button id="btn">Edit New Article</button>
                     </NavLink>
@@ -42,11 +46,6 @@ class SideMenu extends Component {
                     <NavLink to="/Members">
                         <button id="btn" onClick={this.toDashboard}>Members</button>
                     </NavLink>
-
-                    <NavLink to="">
-                        <button id="btn">Button 3</button>
-                    </NavLink>
-
 
                 </div>
 
