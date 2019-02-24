@@ -78,25 +78,22 @@ class Editor extends Component {
     return (
       <div>
 
-        {/* <div className="text-editor"> */}
-
+        <div id="tool-box">
+          <button id="add-btn" style={{}} onClick={() => this.newArticle("yessir", "Bobby", this.state.editorHtml)}>Add New</button>
           <CustomToolbar />
-          <ReactQuill
+        </div>
+        <div id="editor-container">
+          <ReactQuill className="txt-editor"
             onChange={this.handleChange}
             placeholder={this.props.placeholder}
             modules={Editor.modules}
             formats={Editor.formats}
             theme={"snow"} // pass false to use minimal theme
-            style={{
-              width: "70%",
-              height: "600px",
-              margin: "20px 0 0 15% ",
-              backgroundColor: "#FFFFFF",
-              ///border:"px solid #FFFFFF",
-            }}
+
           />
-          <button onClick={() => this.newArticle("yessir", "Bobby", this.state.editorHtml)}>Add New</button>
-        {/* </div> */}
+        </div>
+
+
       </div>
     );
   }

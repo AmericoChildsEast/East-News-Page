@@ -1,91 +1,13 @@
-/***************************
-***DashBoard page elements**
-****************************/
-
-.contentBox{
-    border:none;
-    color: black;
-    height:567px;
-    background-color:#FFFFFF ;
-    overflow: auto;
-    z-index: -3;
-}
-#pNames{
-    border:none;
-}
-#pchild{
+.contentBox {
+    position: absolute;
     border: none;
-    padding-left: 1%;
-    width:30%;
-}
-/*-----------------------------*/
-/***Articles page elements***/
-#articleBox{
-    border:none;
-    border-radius: 30px;
-    width: 80%;
-    height: 160px;
-    margin: 10px 0 0 10%;
-    background-color:#FFFFFF ;
-    -webkit-box-shadow: 9px 21px 100px -31px rgba(88,128,245,1);
--moz-box-shadow: 9px 21px 100px -31px rgba(88,128,245,1);
-box-shadow: 9px 21px 100px -31px rgba(88,128,245,1);
-
-}
-/* visual box holds imgs or laters */
-#visualBox{
-    border:none;
-    border-radius: 15% 0% 0% 16%;
-    width: 20%;
-    height: 160px;
-    float: left;
-    background-color:#1ABC9C;
-
-}
-#sample_txt_Box{
-    border:none;
-/* border-bottom:1px solid #D5D8DC; */
-    height: 120px;
-    width: 100%;
-    padding: 10px;
-    float: left;
-    
-}
-#manage_btn_Box{
-    border:none;
-    border-left:2px solid #D5D8DC;
-    border-radius: 0% 17% 17% 0%;
-    width: 20%;
-    height: 160px;
-    float:right;
-    background-color:#FFFFFF;
-
-}
-#delBtn{
-    width:100%;
-    height: 40px;
-    border:none;
-    margin-top: 36px;
-    text-align: left;
-    font-family: Helvetica, sans-serif;
-    color:#D5D8DC;
-    background-color:#FFFFFF;
-
-}
-#editBtn{
-    width:100%;
-    height: 40px;
-    border:none;
-    margin-top:5px;
-    text-align: left;
-    font-family: Helvetica, sans-serif;
-    color:#D5D8DC;
-    background-color:#FFFFFF;
-
-}
-#editBtn:hover,#delBtn:hover{
-    background-color:#D4E6F1;
-    color:#4A235A;
+    color: black;
+    width: 85%;
+    height: 567px;
+    margin: 0px 0 0 15%;
+    background-color: rgb(255, 255, 255);
+    overflow: auto;
+    z-index: -4;
 }
 
-/*----------------------------*/
+

@@ -11,16 +11,14 @@ class EditingPage extends Component {
    render() {
       return (
          <div>
-          
-            <div>
+
             <SideMenu />
             <div className="contentBox">
-                  {/* <h1>Editor</h1> */}
-                  <Editor placeholder={'Write something...'} />
-                  {/* <br />
+               <h1>Editor</h1>
+               <Editor placeholder={'Write something...'} />
+               {/* <br />
                   <br />
                   <br /> */}
-               </div>
             </div>
          </div>
       );

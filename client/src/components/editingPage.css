@@ -1,18 +1,30 @@
- /* .container{
-    border:1px solid black;
-    color: black;
-    height:567px;
-    background-color:#FFFFFF ;
-    overflow: auto;
- } */
- 
- .text-editor {
-     border: 1px solid black;
-     width: 80%;
+#tool-box{
+    border: none;
+    width: 70%;
+    height: 100px;
      margin: 0% 0% 0% 15%;
- }
-
- #toolbar {
+}
+ .txt-editor {
      width: 70%;
-     margin: 0% 0% 0% 15%;
+     height: 600px;
+     margin: 10px 0 0 15%;
+     background-color: #FFFFFF;
+     border: none;
  }
+    #add-btn{
+       
+        border: none;
+        float:right;
+        width: 100px;
+        height: 45px;
+        border-radius: 10px;
+        margin: 0 0 10px 0;
+    }
+    #add-btn:hover{
+        background-color: #BD00FF;
+        color: #FFFFFF;
+    }
+    #toolbar{
+        float:right;
+        width: 785px;
+    }

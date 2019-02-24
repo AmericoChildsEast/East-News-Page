@@ -3,18 +3,16 @@
 **********************/
 
 #sideMenu {
-    /* border: 1px solid black; */
-    border-right: 2px solid gray;
+    border: none;
     width: 200px;
     height: 567px;
     color: black;
     float: left;
     /* z-index: 3; */
-    background-color:#FFFFFF;
-
-    -webkit-box-shadow: 10px 0px 24px -10px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 0px 24px -10px rgba(0,0,0,0.75);
-    box-shadow: 10px 0px 24px -10px rgba(0,0,0,0.75);
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 7px 0px 43px -12px rgba(86, 63, 99, 1);
+    -moz-box-shadow: 7px 0px 43px -12px rgba(86, 63, 99, 1);
+    box-shadow: 7px 0px 43px -12px rgba(86, 63, 99, 1)
 }
 
 #btn {
@@ -29,6 +27,7 @@
 }
 
 #btn:hover {
-    background-color: #330066;
-    border-left: 7px solid #FF5722;
+    background-color: #C4ACDA ;
+    border-left: 7px solid #47015F ;
+    color: #FFFFFF;
 }
