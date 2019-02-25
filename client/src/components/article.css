@@ -32,6 +32,7 @@
     padding: 10px;
     /* border-radius: 5% 0% 0% 5%; */
     float: left;
+    overflow: hidden;
 }
 
 #manage-btn-Box {

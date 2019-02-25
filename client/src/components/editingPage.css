@@ -2,12 +2,12 @@
     border: none;
     width: 70%;
     height: 100px;
-     margin: 0% 0% 0% 15%;
+     margin: 0% 0% 0% 145px;
 }
  .txt-editor {
-     width: 70%;
+     width: 790px;
      height: 600px;
-     margin: 10px 0 0 15%;
+     margin: 10px 0 0 13%;
      background-color: #FFFFFF;
      border: none;
  }
@@ -27,4 +27,5 @@
     #toolbar{
         float:right;
         width: 790px;
+        margin: 5px 0 0 5%;
     }

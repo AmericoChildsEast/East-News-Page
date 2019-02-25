@@ -11,10 +11,10 @@ function ArticleCard() {
         <div id="article-card">
             <div id="card-img">
             {/* img / letters / colors */}
-             <h5>Title goes here and background images...</h5>
+           
             </div>
             <div id="card-footer">
-             <p>Sample text goes here...</p>
+            <p>Tittle goes here and sample text...</p>
              <p>NOTE: this is just a temporary example</p>
             </div>
         </div>

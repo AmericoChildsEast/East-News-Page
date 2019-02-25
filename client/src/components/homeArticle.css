@@ -16,6 +16,7 @@
     position: relative;
     border: none;
     text-align: justify;
+    font-family: Arial Narrow, sans-serif;
     width: 300px;
     height: 350px;
     margin: 0px 0 10px 2%;
@@ -26,9 +27,9 @@
 }
 
 #article-card:hover {
-    -webkit-box-shadow: 0px 0px 20px 6px rgba(201,148,87,1);
--moz-box-shadow: 0px 0px 20px 6px rgba(201,148,87,1);
-box-shadow: 0px 0px 20px 6px rgba(201,148,87,1);
+    -webkit-box-shadow: 0px 0px 19px 1px rgba(69,130,145,1);
+    -moz-box-shadow: 0px 0px 19px 1px rgba(69,130,145,1);
+    box-shadow: 0px 0px 19px 1px rgba(69,130,145,1);
 
 }
 
@@ -36,13 +37,18 @@ box-shadow: 0px 0px 20px 6px rgba(201,148,87,1);
     height: 250px;
     padding: 10px;
     border-radius: 8px 8px 0px 0px;
-    background-color: #9C38EB;
+    color:rgb(255, 255, 255);
+    background-image: url("http://paularts.info/wp-content/uploads/2018/11/newsletter-graphics-finding-printable-newsletter-templates-thriftyfun-printable.jpg");
+    background-color:#A6B1BA;
 }
 
 #card-footer {
     border: none;
     padding: 10px;
     height: 100px;
+    font-family:Georgia, serif;
+    font-weight: 800;
+    overflow:hidden;
     border-radius: 0 0 8px 8px;
 }
 
