@@ -8,6 +8,13 @@ import SideMenu from './sideMenu';
 import * as actions from '../actions';
 import './dashboardCSS.css';
 
+function DashImage(){
+ return(
+      <div >
+    <img id="dash-img" src={require('../content/edash_img.svg')}  />
+     </div>
+ );
+}
 class Dashboard extends Component {
 
     constructor(props) {
@@ -45,19 +52,20 @@ class Dashboard extends Component {
                 <div className="container" style={{ marginBottom: '0px' }}>
                     <SideMenu />
                     <div class="contentBox">
-
+                    <DashImage />
                         {
+                            
                             //display members #format
-                            users.map(function (users, index) {
-                                return <div>
-                                    <p id="pName">
-                                        <span id="pchild" key={index} style={{ color: "black" }} >{users.name}</span>
-                                        <span id="pchild" style={{ float: "right", borderLeft: " 1px solid #808B96" }}>date here/email</span>
-                                        <span id="pchild" style={{ float: "right", borderLeft: " 1px solid  #808B96" }}>time here/password</span>
-                                        <hr style={{ border: "0.4px solid  #566573" }} />
-                                    </p>
-                                </div>
-                            })
+                            // users.map(function (users, index) {
+                            //     return <div>
+                            //         <p id="pName">
+                            //             <span id="pchild" key={index} style={{ color: "black" }} >{users.name}</span>
+                            //             <span id="pchild" style={{ float: "right", borderLeft: " 1px solid #808B96" }}>date here/email</span>
+                            //             <span id="pchild" style={{ float: "right", borderLeft: " 1px solid  #808B96" }}>time here/password</span>
+                            //             <hr style={{ border: "0.4px solid  #566573" }} />
+                            //         </p>
+                            //     </div>
+                            // })
 
                         }
 

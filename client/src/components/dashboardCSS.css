@@ -1,4 +1,4 @@
-.contentBox {
+.contentBox{
     position: absolute;
     border: none;
     color: black;
@@ -9,5 +9,21 @@
     overflow: auto;
     z-index: -4;
 }
-
+#dash-img{
+    /* border: 1px solid black; */
+    height: 500px;
+    width: 800px;
+    margin: 0 0 0 150px;
+    animation-name: dash;
+    animation-duration: 6s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+@keyframes dash {
+    0%   {margin: 0 0 0 150px;}
+    25%  {margin: 20px 0 0 150px;}
+    50%  {margin: 0px 0 0 150px;}
+    75%  {margin: 20px 0 0 150px;}
+    /* 100% {margin: 3px 0 0 150px;} */
+  }
 
