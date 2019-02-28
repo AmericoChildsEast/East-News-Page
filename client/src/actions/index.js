@@ -112,39 +112,50 @@ export const addArticle = data => {
             txt: data.txt
         });
 
-        console.log( "whattt" );
-
-        dispatch({
-            type: AUTH_SIGN_UP,
-            payload: res.data.titl
-        });
-
     }
 }
 
 export const delArticle = data => {
     return async dispatch => {
-        const res = await axios.post('http://localhost:5000/article/delarticle');
-
-
+        
+        const res = await axios.post('http://localhost:5000/article/delarticle', {
+            uid: data.user,
+            pid: data.pid
+        });
 
     }
 }
 
 export const editArticle = data => {
     return async dispatch => {
-        const res = await axios.post('http://localhost:5000/article/editarticle');
-
-
-
+        console.log(data.head);
+        const res = await axios.post('http://localhost:5000/article/editarticle', {
+            titl: data.title,
+            head: data.head,
+            txt:  data.txt,
+            uid:  data.user,
+            pid:  data.pid
+        });
     }
 }
 
 export const approveArticle = data => {
     return async dispatch => {
-        const res = await axios.post('http://localhost:5000/article/approvearticle');
-
-
-
+        const res = await axios.post('http://localhost:5000/article/approvearticle', {
+            uid: data.user,
+            pid: data.pid
+        });
     }
 }
+
+export const getArticles = data => {
+    return async dispatch => {
+        const res = await axios.post('http://localhost:5000/article/getarticles', {
+           // br: data.br,
+           // er: data.er
+        });
+        
+        localStorage.setItem('Posts', JSON.stringify(res.data.posts) );
+    }
+}
+

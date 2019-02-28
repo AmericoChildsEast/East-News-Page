@@ -61,11 +61,29 @@ class Editor extends Component {
     this.state = { editorHtml: "" };
     this.handleChange = this.handleChange.bind(this);
     this.newArticle = this.newArticle.bind(this);
+    this.delArticle = this.delArticle.bind(this);
+    this.editArticle = this.editArticle.bind(this);
+    this.approveArticle = this.approveArticle.bind(this);
   }
 
   async newArticle( t, h, b ) {
-    console.log(b);
     await this.props.addArticle( { user: localStorage.getItem('GoogleID'), title: t, head: h, txt: b } );
+  }
+
+  async delArticle( i ) {
+    await this.props.delArticle( { user: localStorage.getItem('GoogleID'), pid: "5c39529bbcc8591c3cd1234a" } );
+  }
+
+  async editArticle( i ) {
+    await this.props.editArticle( { user: localStorage.getItem('GoogleID'), pid: "5c6b80e76b9ad220789327ae", title: "Nope!", head: "WickyWack" } );
+  }
+
+  async approveArticle( i ) {
+    await this.props.approveArticle( { user: localStorage.getItem('GoogleID'), pid: "5c3952d7c88a5b1af4cb71f0" } );
+  }
+
+  async getArticles() {
+    await this.props.getArticles();
   }
 
   handleChange(html) {
@@ -73,6 +91,13 @@ class Editor extends Component {
   }
 
   render() {
+
+    var articles = [];
+
+      if ( JSON.parse(localStorage.getItem("Posts")) != null ) {
+        articles = JSON.parse(localStorage.getItem("Posts"));
+      } 
+
     return (
       
       <div className="text-editor">
@@ -92,6 +117,20 @@ class Editor extends Component {
                            }}
         />
         <button onClick={() => this.newArticle( "yessir", "Bobby", this.state.editorHtml )}>Add New</button>
+        <button onClick={() => this.getArticles() }>Delete</button>
+        <div className="contentBox">
+                         <h1 style={{color: "black",textAlign:"center"}}>Members</h1>
+                         <a onClick={this.refresh}>Refresh</a>
+                        {
+                         articles.map( (articles) => {
+                           return   <div>
+                                     
+                                      {articles.title}  
+                                  
+                                   </div>
+                            })
+                        }
+        </div>
       </div>
     );
   }

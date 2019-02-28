@@ -17,8 +17,13 @@ module.exports = {
 
     getUsers: async (req, res, next) => {
 
-        const users = await User.find();
-        
+        // Beginning Range
+        const br = req.body.br;
+        // Ending Range
+        const er = req.body.er;
+        // Find users through the range
+        const users = await User.find().skip(br).limit(er);
+        // Return the users
         res.json({ users });
 
     },

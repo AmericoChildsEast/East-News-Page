@@ -14,6 +14,9 @@ router.route('/editarticle')
     .post(ArticlesController.editArticle);
 
 router.route('/approvearticle')
-    .post(ArticlesController.editArticle);
+    .post(ArticlesController.approveArticle);
+
+router.route('/getarticles')
+    .post(ArticlesController.getArticles);
 
 module.exports = router;

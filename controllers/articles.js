@@ -37,7 +37,7 @@ module.exports = {
         
         const post = req.body.pid;
         const user = req.body.uid;
-
+        
         const fuser = await User.findOne({ googleid: user }); // Find user
         const fpost = await Post.findOne({ _id: post });
 
@@ -62,7 +62,7 @@ module.exports = {
         const fuser = await User.findOne({ googleid: user }); // Find user
         const fpost = await Post.findOne({ _id: post });
 
-        console.log( "**************** " + text); 
+        console.log( "**************** " + fpost); 
 
         if( !( fuser.group < 2 ) || fpost.author == uid ) {
             
@@ -92,10 +92,11 @@ module.exports = {
     },
 
     approveArticle: async ( req, res, next ) => {
-
+        // Approver's id
         const user = req.body.uid;
-        const pid = req.body.uid;
-
+        // Post's id
+        const pid = req.body.pid;
+        console.log(pid);
         const fuser = await User.findOne({ googleid: user }); // Find user
         const fpost = await Post.findOne({ _id: pid });
 
@@ -112,6 +113,18 @@ module.exports = {
         }
 
 
+    },
+
+    getArticles: async ( req, res, next ) => {
+        // "br" = beginning range & "er" = ending range for pagination
+        // Beginning Range
+        const br = req.body.br;
+        // Ending Range
+        const er = req.body.er;
+        // Searches for posts in range
+        const posts = await Post.find().skip( br ).limit( er );
+        // Returns posts
+        res.json( { posts } );
     }
 
 }
