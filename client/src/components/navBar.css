@@ -1,0 +1,7 @@
+#navbox{
+    background-color:#6E009E;
+
+    -webkit-box-shadow: 0px 2px 19px 0px rgba(99,70,99,1);
+    -moz-box-shadow: 0px 2px 19px 0px rgba(99,70,99,1);
+    box-shadow: 0px 2px 19px 0px rgba(99,70,99,1);
+}
