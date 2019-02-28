@@ -5,15 +5,15 @@
 }
 
 #members-nav {
-    border: none;
+    border: 1px solid #B44DE1;
     height: 40px;
     margin: 50px 0 20px 0px;
     padding: 3px 0px 1px 5px;
     background-color: #FFFFFF;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 0px 19px -6px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 19px -6px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 19px -6px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(199,199,199,1);
+    -moz-box-shadow: 0px 0px 9px 0px rgba(199,199,199,1);
+    box-shadow: 0px 0px 9px 0px rgba(199,199,199,1);
 }
 
 #refresh-btn {
@@ -27,7 +27,7 @@
 #pName {
     border: none;
     height: 45px;
-    border-bottom: 0.5px solid #E8E8E8;
+    border-bottom: 0.5px solid #B44DE1;
     margin: 0 0 10px 0;
     color: black;
 }

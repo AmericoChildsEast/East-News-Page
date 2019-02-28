@@ -9,21 +9,28 @@
     overflow: auto;
     z-index: -4;
 }
-#dash-img{
-    /* border: 1px solid black; */
+#left-content{
+    border:1px solid #B44DE1;
+    width: 300px;
     height: 500px;
-    width: 800px;
-    margin: 0 0 0 150px;
-    animation-name: dash;
-    animation-duration: 6s;
-    animation-timing-function: ease;
-    animation-iteration-count: infinite;
+    float: left;
+    margin: 30px 0px 0px 60px;
+    border-radius: 5px;
 }
-@keyframes dash {
-    0%   {margin: 0 0 0 150px;}
-    25%  {margin: 20px 0 0 150px;}
-    50%  {margin: 0px 0 0 150px;}
-    75%  {margin: 20px 0 0 150px;}
-    /* 100% {margin: 3px 0 0 150px;} */
-  }
 
+#mid-content{
+    border:1px solid #B44DE1;
+    width: 300px;
+    height: 500px;
+    float: left;
+    margin: 30px 0px 0px 50px;
+    border-radius: 5px;
+}
+#right-content{
+    border:1px solid #B44DE1;
+    width: 300px;
+    height: 500px;
+    float: left;
+    margin: 30px 0px 0px 50px;
+    border-radius: 5px;
+}

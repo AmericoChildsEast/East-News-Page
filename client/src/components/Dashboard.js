@@ -11,7 +11,16 @@ import './dashboardCSS.css';
 function DashImage(){
  return(
       <div >
-    <img id="dash-img" src={require('../content/edash_img.svg')}  />
+          <div id="left-content">
+          
+          </div>
+          <div id="mid-content">
+          
+          </div>
+          <div id="right-content">
+
+          </div>
+   
      </div>
  );
 }

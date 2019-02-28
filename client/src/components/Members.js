@@ -74,8 +74,8 @@ class Members extends Component {
 
                     <div id="pName">
                       <div id="pchild" style={{ float: "left"}} >{users.name}</div>
-                      <div id="pchild" style={{ float: "left", borderLeft: " 1px solid  #808B96" }}>{groups[users.group]}</div>
-                      <span id="pchild1" style={{ float: "right", borderLeft: " 1px solid #808B96" }}>
+                      <div id="pchild" style={{ float: "left", borderLeft: " 1px solid  #B44DE1" }}>{groups[users.group]}</div>
+                      <span id="pchild1" style={{ float: "right", borderLeft: " 1px solid #B44DE1" }}>
                         <button id="promote-btn" onClick={() => this.promoteUser(users.googleid)}>Promote</button>
                         <button id="demote-btn" onClick={() => this.demoteUser(users.googleid)}>Demote</button>
                       </span>

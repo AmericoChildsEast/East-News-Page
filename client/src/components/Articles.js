@@ -10,6 +10,7 @@ function ArticleBoxToken() {
         <div id="articleBox">
 
             <div id="article-container" >
+           
                 <div id="sample-txt-Box">
                     <h4>Article heading appears here</h4>
                     <p>Sample text of article appers here... <br />
@@ -54,13 +55,10 @@ class Articles extends Component {
                 <SideMenu />
                 <div className="contentBox">
 
-                    <h1 style={{
-                        textAlign: "center",
-                        color: ""
-                    }}>
-                        All articles in the data base are to be shown here
-               </h1>
-
+                <div id="article-page-nav">
+                <h1 style={{ color: "black", margin: "5px 0 0 400px", fontSize:23 }}>Articles</h1>
+                </div>
+                   
                     {this.printMoreBox()}
                     <br />
                     <br />

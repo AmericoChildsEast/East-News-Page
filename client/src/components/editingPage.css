@@ -2,9 +2,10 @@
     border: none;
     width: 70%;
     height: 100px;
-     margin: 0% 0% 0% 145px;
+     margin: 50px 0% 0% 145px;
 }
  .txt-editor {
+    border: 1px solid #B44DE1;
      width: 790px;
      height: 600px;
      margin: 10px 0 0 13%;
@@ -13,7 +14,7 @@
  }
     #add-btn{
        
-        border: none;
+        border: 1px solid #B44DE1;
         float:right;
         width: 100px;
         height: 45px;

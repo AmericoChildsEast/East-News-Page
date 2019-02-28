@@ -79,7 +79,7 @@ class Editor extends Component {
       <div>
 
         <div id="tool-box">
-          <button id="add-btn" style={{}} onClick={() => this.newArticle("yessir", "Bobby", this.state.editorHtml)}>Add New</button>
+          <button id="add-btn" style={{}} onClick={() => this.newArticle("yessir", "Bobby", this.state.editorHtml)}>Add new</button>
           <CustomToolbar />
         </div>
         <div id="editor-container">
