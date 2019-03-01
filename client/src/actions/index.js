@@ -169,6 +169,7 @@ export const approveArticle = data => {
     }
 }
 
+// In the future, we'll have a field to get ONLY approved articles, right now there's no restrictions for testing purposes
 // ****** Still needs reducers & dispatch for confirming actions or failure
 // async delArticle( { user: string, pid: string, br: int, er: int } );
 export const getArticles = data => {
@@ -179,6 +180,30 @@ export const getArticles = data => {
         });
         // Until we user reduces/dispatch for efficiency, we store posts for testing and formatting
         localStorage.setItem('Posts', JSON.stringify(res.data.posts) );
+
+        /*
+            ////////////////////////////////////////
+            ///      Current Data Structure      ///
+            ////////////////////////////////////////
+
+            (After mapping the data)
+
+            v.data || v = value (from key) & data = desired value
+            Ex.) articles.author
+            { Post: 
+                {
+                    author, [User's ID] || In the future we'll have getter function for requesting names
+                    title:    string       [Post's title]
+                    header:   string       [Header's image url]
+                    body:     string       [Header's body text]
+                    approval: boolean      [Approval status]
+                    date:     string       [Original creation date]
+                    edit:     string       [Last edit date]
+
+                }
+            }
+        */
+
     }
 }
 

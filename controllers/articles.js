@@ -6,21 +6,21 @@ module.exports = {
 
     addArticle: async ( req, res, next ) => {
 
-        const user = req.body.uid;
-        const titl = req.body.titl;
-        const head = req.body.head;
-        const text = req.body.txt;
+        const user = req.body.uid;      // User's ID
+        const titl = req.body.titl;     // Post's title
+        const head = req.body.head;     // Post's header
+        const text = req.body.txt;      // Post's body text
 
-        var d = new Date();
+        var d = new Date();             // Time & date for the article
 
         const fuser = await User.findOne({ googleid: user }); // Find user
         
         if( fuser.group < 1 ) {
             res.status(403).send({ error: 'You do not have perms to post' });
         } else {
-
+            // Save the respective data
             const newArticle = new Post({
-                date: d,
+                date: d,    
                 author: fuser.googleid,
                 title: titl,
                 header: head,
