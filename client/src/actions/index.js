@@ -190,6 +190,7 @@ export const getArticles = data => {
 
             v.data || v = value (from key) & data = desired value
             Ex.) articles.author
+            
             { Post: 
                 {
                     author, [User's ID] || In the future we'll have getter function for requesting names
