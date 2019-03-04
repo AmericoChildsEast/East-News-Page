@@ -165,5 +165,59 @@ module.exports = {
         }
         
     },
+
+    getUsername: async( req, res, next ) => {
+
+        const user = req.body.uid;
+        const fuser = await User.findOne({ googleid: user });
+
+        const name = fuser.name;
+
+        res.json({ name });
+
+    },
+
+    getUseremail: async( req, res, next ) => {
+
+        const user = req.body.uid;
+        const fuser = await User.findOne({ googleid: user });
+
+        const email = fuser.email;
+
+        res.json({ email });
     
+    },
+
+    getUseremail: async( req, res, next ) => {
+
+        const user = req.body.uid;
+        const fuser = await User.findOne({ googleid: user });
+
+        const email = fuser.email;
+
+        res.json({ email });
+    
+    },
+
+    getUsergroup: async( req, res, next ) => {
+
+        const user = req.body.uid;
+        const fuser = await User.findOne({ googleid: user });
+
+        var group = fuser.group;
+
+        const i = [
+            "User",
+            "Curator",
+            "Admin"
+        ]
+
+        var group = i[group]
+        
+        res.json({ group });
+
+    }
+    
+
 }
+

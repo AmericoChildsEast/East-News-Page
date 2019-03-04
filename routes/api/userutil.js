@@ -31,5 +31,13 @@ router.route('/demote')
 router.route('/getusers')
     .post(UsersController.getUsers);
 
+router.route('/getusername')
+    .post(UsersController.getUsername);
+
+router.route('/getuseremail')
+    .post(UsersController.getUseremail);
+
+router.route('/getusergroup')
+    .post(UsersController.getUsergroup);
 
 module.exports = router;

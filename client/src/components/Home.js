@@ -19,9 +19,7 @@ class Home extends Component {
                     <ArticleCard/>
                     </div>
                     
-                </div>
-
-                
+                </div>   
 
             </div>
         );

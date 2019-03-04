@@ -208,3 +208,50 @@ export const getArticles = data => {
     }
 }
 
+/////////////////
+///   Users   ///
+/////////////////
+
+// async getUsername( { user: string } );
+// THIS FUNCTION RETURNS THE VALUE, var = await func();
+export const getUsername = data => {
+    return async dispatch => {
+        // Making the route request to the backend
+        const res = await axios.post('http://localhost:5000/util/getusername', {
+            uid: data.user
+        });
+        
+        return res.data.name;
+
+    }
+}
+
+// async getUseremail( { user: string } );
+// THIS FUNCTION RETURNS THE VALUE, var = await func();
+export const getUseremail = data => {
+    return async dispatch => {
+        // Making the route request to the backend
+        const res = await axios.post('http://localhost:5000/util/getuseremail', {
+            uid: data.user
+        });
+                
+        return res.data.email;
+
+    }
+}
+
+// async getUsergroup( { user: string } );
+// THIS FUNCTION RETURNS THE VALUE, var = await func();
+export const getUsergroup = data => {
+    return async dispatch => {
+        // Making the route request to the backend
+        const res = await axios.post('http://localhost:5000/util/getusergroup', {
+            uid: data.user
+        });
+                
+        return res.data.group;
+
+    }
+}
+
+
